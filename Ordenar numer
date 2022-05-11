@@ -1,6 +1,12 @@
-				case 6:
-				long auxiliar = 0;
+			case 6:
+
 				int mayorMenor = 0;
+				//String nombre
+				//String apellido
+				//long dni 
+				//String localdiad 
+				//int edad
+				//long telefono
 
 				System.out.println("ORDENAR DNI.");
 				System.out.println("Presione 1 para ordenar de mayor a menor");
@@ -16,9 +22,20 @@
 
 						for (int j2 = 0; j2 < vectorPersonas.length - 1; j2++) {
 							if (vectorPersonas[j2].getDni() < vectorPersonas[j2 + 1].getDni()) {
-								auxiliar = vectorPersonas[j2].getDni();
-								vectorPersonas[j2].setDni(vectorPersonas[j2 + 1].getDni());
-								vectorPersonas[j2 + 1].setDni(auxiliar);
+								
+								nombre = vectorPersonas[j2].getNombre();
+								apellido = vectorPersonas[j2].getApellido();
+								dni = vectorPersonas[j2].getDni();
+								edad = vectorPersonas[j2].getEdad();
+								localidad = vectorPersonas[j2].getLocalidad();
+								telefono = vectorPersonas[j2].getTelefono();
+								
+								vectorPersonas[j2] = new Persona (vectorPersonas[j2+1].getNombre(), vectorPersonas[j2+1].getApellido(),vectorPersonas[j2+1].getDni(),vectorPersonas[j2+1].getEdad(), vectorPersonas[j2+1].getLocalidad(), vectorPersonas[j2+1].getTelefono());
+								
+								vectorPersonas[j2+1] = new Persona (nombre,apellido, dni, edad, localidad, telefono);
+								
+								
+								
 							}
 						}
 					}
@@ -36,9 +53,20 @@
 
 						for (int j2 = 0; j2 < vectorPersonas.length - 1; j2++) {
 							if (vectorPersonas[j2].getDni() > vectorPersonas[j2 + 1].getDni()) {
-								auxiliar = vectorPersonas[j2].getDni();
-								vectorPersonas[j2].setDni(vectorPersonas[j2 + 1].getDni());
-								vectorPersonas[j2 + 1].setDni(auxiliar);
+								
+								nombre = vectorPersonas[j2].getNombre();
+								apellido = vectorPersonas[j2].getApellido();
+								dni = vectorPersonas[j2].getDni();
+								edad = vectorPersonas[j2].getEdad();
+								localidad = vectorPersonas[j2].getLocalidad();
+								telefono = vectorPersonas[j2].getTelefono();
+								
+								vectorPersonas[j2] = new Persona (vectorPersonas[j2+1].getNombre(), vectorPersonas[j2+1].getApellido(),vectorPersonas[j2+1].getDni(),vectorPersonas[j2+1].getEdad(), vectorPersonas[j2+1].getLocalidad(), vectorPersonas[j2+1].getTelefono());
+								
+								vectorPersonas[j2+1] = new Persona (nombre,apellido, dni, edad, localidad, telefono);
+								
+								
+								
 							}
 						}
 					}
