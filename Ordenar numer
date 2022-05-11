@@ -1,0 +1,60 @@
+				case 6:
+				long auxiliar = 0;
+				int mayorMenor = 0;
+
+				System.out.println("ORDENAR DNI.");
+				System.out.println("Presione 1 para ordenar de mayor a menor");
+				System.out.println("Presione 2 para ordenar de menor a mayor");
+
+				mayorMenor = entrada.nextInt();
+
+				switch (mayorMenor) { // OPEN SWITCH ORDENAR VECTOR
+
+				case 1:
+
+					for (int i2 = vectorPersonas.length - 1; i2 > 0; i2--) {
+
+						for (int j2 = 0; j2 < vectorPersonas.length - 1; j2++) {
+							if (vectorPersonas[j2].getDni() < vectorPersonas[j2 + 1].getDni()) {
+								auxiliar = vectorPersonas[j2].getDni();
+								vectorPersonas[j2].setDni(vectorPersonas[j2 + 1].getDni());
+								vectorPersonas[j2 + 1].setDni(auxiliar);
+							}
+						}
+					}
+
+					for (int i2 = 0; i2 < vectorPersonas.length; i2++) {
+						System.out.println("Nombre y apellido: " + vectorPersonas[i2].getNombre() + " " + vectorPersonas[i2].getApellido());
+						System.out.println("Dni :" + vectorPersonas[i2].getDni());
+					}
+
+					break;
+
+				case 2:
+
+					for (int i2 = vectorPersonas.length - 1; i2 > 0; i2--) {
+
+						for (int j2 = 0; j2 < vectorPersonas.length - 1; j2++) {
+							if (vectorPersonas[j2].getDni() > vectorPersonas[j2 + 1].getDni()) {
+								auxiliar = vectorPersonas[j2].getDni();
+								vectorPersonas[j2].setDni(vectorPersonas[j2 + 1].getDni());
+								vectorPersonas[j2 + 1].setDni(auxiliar);
+							}
+						}
+					}
+
+					for (int i2 = 0; i2 < vectorPersonas.length; i2++) {
+						System.out.println("Nombre y apellido: " + vectorPersonas[i2].getNombre() + " " + vectorPersonas[i2].getApellido());
+						System.out.println("Dni :" + vectorPersonas[i2].getDni());
+					}
+
+					break;
+
+				default:
+					System.out.println("ERROR.");
+
+					break;
+
+				} // CLOSE SWITCH ORDENAR VECTOR
+
+				break;
